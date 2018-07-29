@@ -36,9 +36,15 @@
         <response name="success" type="view" value="main"/>
         <response name="error" type="view" value="main"/>
     </request-map>
-    <request-map uri="graphqlEvent">
+    <request-map uri="graphqlXmlEvent">
         <security https="true" auth="true"/>
         <event type="java" path="com.sagas.ofbizdemo.events.OfbizDemoEvents" invoke="graphqlEvent"/>
+        <response name="error" type="none"/>
+        <response name="success" type="none"/>
+    </request-map>
+    <request-map uri="graphqlEvent">
+        <security https="true" auth="true"/>
+        <event type="java" path="com.sagas.ofbizdemo.events.GraphQLEvents" invoke="graphqlEvent"/>
         <response name="error" type="none"/>
         <response name="success" type="none"/>
     </request-map>
